@@ -4,6 +4,7 @@
 
     class TitleCaseGeneratorTest extends PHPUnit_Framework_TestCase
     {
+
         function test_makeTitleCase_oneWord()
         {
             //arrange
@@ -21,15 +22,41 @@
         {
             //arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
-            $input = "the little mermaid";
+            $input = "little mermaid";
 
             //Act
             $result = $test_TitleCaseGenerator->makeTitleCase($input);
 
             //Assert
-            $this->assertEquals("The Little Mermaid", $result);
+            $this->assertEquals("Little Mermaid", $result);
 
-    }
+        }
+
+        function test_makeTitleCase_lowerCase()
+        {
+            //arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "QuEEN vIcToria";
+
+            //act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //assert
+            $this->assertEquals("Queen Victoria", $result);
+        }
+
+        function test_makeTitleCase_ignoreArticle()
+        {
+            //arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "once upon a time";
+
+            //act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //assert
+            $this->assertEquals("Once Upon a Time", $result);
+        }
     }
 
 
