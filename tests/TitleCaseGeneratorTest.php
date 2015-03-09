@@ -5,6 +5,7 @@
     class TitleCaseGeneratorTest extends PHPUnit_Framework_TestCase
     {
 
+        //Spec: Take a single word and capitalize the first letter
         function test_makeTitleCase_oneWord()
         {
             //arrange
@@ -18,6 +19,7 @@
             $this->assertEquals("Beowulf", $result);
         }
 
+        //Spec: Take multiple words and capitalize the first letter of each word
         function test_makeTitleCase_multipleWords()
         {
             //arrange
@@ -32,6 +34,7 @@
 
         }
 
+        //Spec: Only the first letter of each word should be capitalized.
         function test_makeTitleCase_lowerCase()
         {
             //arrange
@@ -45,6 +48,8 @@
             $this->assertEquals("Queen Victoria", $result);
         }
 
+        //Spec: The first letter of each word should be capitalized, unless that
+        //word is a small word
         function test_makeTitleCase_ignoreArticle()
         {
             //arrange
@@ -58,6 +63,7 @@
             $this->assertEquals("Once Upon a Time", $result);
         }
 
+        //Spec: the first letter of the string has to be capitalized
         function test_makeTitleCase_capitalizeFirstWord()
         {
             //arrange
@@ -71,6 +77,7 @@
             $this->assertEquals("The Little Mermaid", $result);
         }
 
+        //Spec: Only some small words shouldn’t be capitalized
         function test_makeTitleCase_capitalizeSmall()
         {
             //arrange
