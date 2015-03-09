@@ -70,6 +70,19 @@
             //assert
             $this->assertEquals("The Little Mermaid", $result);
         }
+
+        function test_makeTitleCase_capitalizeSmall()
+        {
+            //arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "golden ore";
+
+            //act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //assert
+            $this->assertEquals("Golden Ore", $result);
+        }
     }
 
 
