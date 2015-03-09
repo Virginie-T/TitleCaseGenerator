@@ -57,6 +57,19 @@
             //assert
             $this->assertEquals("Once Upon a Time", $result);
         }
+
+        function test_makeTitleCase_capitalizeFirstWord()
+        {
+            //arrange
+            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $input = "the little mermaid";
+
+            //act
+            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+
+            //assert
+            $this->assertEquals("The Little Mermaid", $result);
+        }
     }
 
 
